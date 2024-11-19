@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои заметки</title>
+</head>
+
+<h1> Вот здесь умный текст</h1>
+
+<h1>Список постов</h1>
+       <ul>
+           {% for l in list %}
+               <li>
+                   <h2>{{ l.title }}</h2>
+                   <p>{{ l.conent }}</p>
+                   <p>Опубликовано: {{ l.created_at }}</p>
+               </li>
+           {% endfor %}
+       </ul>
+
+<body>
+    
+</body>
+</html>
