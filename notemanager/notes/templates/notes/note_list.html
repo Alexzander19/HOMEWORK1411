@@ -15,9 +15,11 @@
                    <h2>{{ l.title }}</h2>
                    <p>{{ l.conent }}</p>
                    <p>Опубликовано: {{ l.created_at }}</p>
+                   <a href = "{% url 'delete_note' l.id  %}" > <button> удалить</button></a>
                </li>
            {% endfor %}
        </ul>
+       <a href="/add/"> Добавить новую заметку</a>
 
 <body>
     

@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 from .models import Note
@@ -30,15 +30,17 @@ def list_notes(request):
 
 def add_notes(request):
      
-    return HttpResponse("Привет! Это приложение Notes.views add_notes.")
-    # return render(request, "add_notes.html")
+    # HttpResponse("Привет! Это приложение Notes.views add_notes.")
+    # return render(request, "admin/notes/note/add/")
+    return HttpResponseRedirect('/admin/notes/note/add/')
 
 
-def delete_note(request, blog_id):
+def delete_note(request, note_id):
 
     # note_to_del = Note.objects.get(id = blog_id)
     # context = {"one_blog": note_to_del}
    
     # return HttpResponse(response % blog_id)
-    return HttpResponse("Привет! Это приложение Notes.views delete_notes.")
-    # return render(request, "delete_note.html", context)   
+    # return HttpResponse("Привет! Это приложение Notes.views delete_notes.")
+    # return render(request, "delete_note.html", context) 
+    return HttpResponseRedirect(f'/admin/notes/note/{note_id}/delete/') 

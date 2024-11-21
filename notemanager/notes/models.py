@@ -10,3 +10,7 @@ class Note(models.Model):
     title = models.CharField(max_length=200)
     conent = models.TextField()
     created_at = models.DateField(auto_now_add = True)
+
+    def __str__(self):
+        return self.title 
+    # Я наконец-то увидел зачем мы пишем __STR__
